@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://tiles/levels.gd"
+}, {
 "base": "Tile",
 "class": "SpecialTile",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://tiles/tile.gd"
 } ]
 _global_script_class_icons={
+"Level": "",
 "SpecialTile": "",
 "Tile": ""
 }
