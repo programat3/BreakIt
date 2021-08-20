@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://test1_noloop.wav" type="AudioStream" id=1]
-[ext_resource path="res://Background.png" type="Texture" id=2]
+[ext_resource path="res://starting_scene/Background.png" type="Texture" id=2]
 [ext_resource path="res://VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Control.gd" type="Script" id=4]
+[ext_resource path="res://starting_scene/Control.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.27451, 0.345098, 0.141176, 1 )

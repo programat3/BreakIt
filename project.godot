@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "SpecialTile",
+"language": "GDScript",
+"path": "res://tiles/special_tile.gd"
+} ]
 _global_script_class_icons={
-
+"SpecialTile": ""
 }
 
 [application]
 
 config/name="Break it Til You Make It"
-run/main_scene="res://Control.tscn"
+run/main_scene="res://starting_scene/Control.tscn"
 config/icon="res://icon.png"
 
 [display]
