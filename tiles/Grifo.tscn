@@ -12,10 +12,12 @@ target_tiles_positions = [ Vector2( 1, 0 ), Vector2( -1, 0 ) ]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+centered = false
 vframes = 2
 hframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 32, 32 )
 shape = SubResource( 1 )

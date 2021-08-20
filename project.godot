@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "FireHydrant",
+"language": "GDScript",
+"path": "res://tiles/special tiles/fire_hydrant.gd"
+}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
@@ -20,13 +25,20 @@ _global_script_classes=[ {
 "path": "res://tiles/special_tile.gd"
 }, {
 "base": "Node2D",
+"class": "SpecialTilesHolder",
+"language": "GDScript",
+"path": "res://tiles/special_tiles_holder.gd"
+}, {
+"base": "Node2D",
 "class": "Tile",
 "language": "GDScript",
 "path": "res://tiles/tile.gd"
 } ]
 _global_script_class_icons={
+"FireHydrant": "",
 "Level": "",
 "SpecialTile": "",
+"SpecialTilesHolder": "",
 "Tile": ""
 }
 
@@ -40,6 +52,14 @@ config/icon="res://icon.png"
 
 window/size/height=640
 window/size/resizable=false
+
+[input]
+
+trigger={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://tilemap.png" type="Texture" id=1]
 [ext_resource path="res://tiles/levels.gd" type="Script" id=2]
-[ext_resource path="res://tiles/Grifo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tiles/Bandera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tiles/background_sprites.png" type="Texture" id=3]
+[ext_resource path="res://tiles/Grifo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main_character/mandrita.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tiles/special_tiles_holder.gd" type="Script" id=6]
+[ext_resource path="res://tiles/Cañería.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 29, 1, 29, 1, 1, 64, 1 )
@@ -135,6 +137,88 @@ points = PoolVector2Array( 64, 37.8263, 38.8308, 37.8263, 38.8308, 0.317764, 64,
 } ]
 0/z_index = 0
 
+[sub_resource type="TileSet" id=14]
+0/name = "background_sprites.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "background_sprites.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "background_sprites.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 128, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "background_sprites.png 3"
+3/texture = ExtResource( 3 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 192, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "background_sprites.png 4"
+4/texture = ExtResource( 3 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 64, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "background_sprites.png 5"
+5/texture = ExtResource( 3 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 64, 64, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "background_sprites.png 6"
+6/texture = ExtResource( 3 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 128, 64, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "background_sprites.png 7"
+7/texture = ExtResource( 3 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 192, 64, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -143,15 +227,32 @@ position = Vector2( 206.225, 323.485 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Grifo" parent="." instance=ExtResource( 3 )]
-position = Vector2( 417.533, 320.501 )
-z_index = 1
-
 [node name="BackgroundTiles" type="TileMap" parent="."]
 position = Vector2( 0.735092, 2.94037 )
 tile_set = SubResource( 13 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 2, 65536, 0, 65536, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65537, 65547, 0, 65537, 65548, 0, 65537, 65549, 0, 65537, 65550, 0, 65537, 65551, 0, 65538, 131072, 0, 65536, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 65537, 131082, 0, 65537, 131083, 0, 65537, 131084, 0, 65537, 131085, 0, 65537, 131086, 0, 65537, 131087, 0, 65538, 196608, 0, 65536, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 65537, 196619, 0, 65537, 196620, 0, 65537, 196621, 0, 65537, 196622, 0, 65537, 196623, 0, 65538, 262144, 0, 65536, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 65537, 262154, 0, 65537, 262155, 0, 65537, 262156, 0, 65537, 262157, 0, 65537, 262158, 0, 65537, 262159, 0, 65538, 327680, 0, 65536, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65537, 327688, 0, 65537, 327689, 0, 65537, 327690, 0, 65537, 327691, 0, 65537, 327692, 0, 65537, 327693, 0, 65537, 327694, 0, 65537, 327695, 0, 65538, 393216, 0, 65536, 393217, 0, 65537, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65537, 393221, 0, 65537, 393222, 0, 65537, 393223, 0, 65537, 393224, 0, 65537, 393225, 0, 65537, 393226, 0, 65537, 393227, 0, 65537, 393228, 0, 65537, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65538, 458752, 0, 65536, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65537, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65538, 524288, 0, 65536, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 65537, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65537, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65538, 589824, 0, 131072, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 131073, 589836, 0, 131073, 589837, 0, 131073, 589838, 0, 131073, 589839, 0, 131074 )
 
-[node name="Bandedra" parent="." instance=ExtResource( 4 )]
-position = Vector2( 483.692, 321.236 )
+[node name="SpecialTiles" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 14 )
+format = 1
+tile_data = PoolIntArray( 262150, 0, 0, 262151, 3, 0 )
+
+[node name="SpecialTilesHolder" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="Grifo" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
+position = Vector2( 640, 256 )
+activated_frame = 4
+
+[node name="Grifo2" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
+position = Vector2( 576, 256 )
+activated_frame = 4
+
+[node name="Grifo3" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
+position = Vector2( 704, 256 )
+activated_frame = 4
+
+[node name="Sewer" parent="SpecialTilesHolder" instance=ExtResource( 7 )]
+position = Vector2( 384, 256 )

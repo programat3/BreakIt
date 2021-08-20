@@ -1,5 +1,7 @@
 class_name Level
 extends Node2D
 
-func _ready():
-	add_child(load("res://tiles/Grifo.tscn").instance())
+
+func _process(delta):
+	if Input.is_action_pressed("trigger"):
+		$SpecialTilesHolder/Sewer.activate()

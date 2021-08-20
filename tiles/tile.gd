@@ -1,20 +1,21 @@
 class_name Tile
 extends Node2D
 
+const TILE_SIZE = 64
 
-signal broken(target_poss)
+signal broken(source_pos, target_poss)
 
 var tilemap
 var activated := false
 export(Array, Vector2) var target_tiles_positions
 
-
 func activate():
 	if not self.activated:
 		self.activated = true
-		emit_signal("broken", self.target_tiles_positions)
-		for target_pos in self.target_tiles_positions:
-			tilemap.get_cell(self.position + target_pos).activate()
-		#for target_tile in self.target_tiles_positions:
-		#	target_tile.activate()
+		self._animate_activation()
+		emit_signal("broken", self.position / TILE_SIZE, self.target_tiles_positions)
+
+
+func _animate_activation():
+	pass
 
