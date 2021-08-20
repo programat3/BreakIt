@@ -18,6 +18,11 @@ _global_script_class_icons={
 config/name="Break it Til You Make It"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=640
+window/size/resizable=false
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
