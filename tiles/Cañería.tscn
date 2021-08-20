@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles/background_sprites.png" type="Texture" id=1]
+[ext_resource path="res://tiles/special_tile.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [node name="Cañeria" type="Node2D"]
+script = ExtResource( 2 )
+current_frame = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

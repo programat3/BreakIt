@@ -9,13 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Tile",
 "class": "SpecialTile",
 "language": "GDScript",
 "path": "res://tiles/special_tile.gd"
+}, {
+"base": "Node2D",
+"class": "Tile",
+"language": "GDScript",
+"path": "res://tiles/tile.gd"
 } ]
 _global_script_class_icons={
-"SpecialTile": ""
+"SpecialTile": "",
+"Tile": ""
 }
 
 [application]
