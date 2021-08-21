@@ -6,7 +6,7 @@
 [ext_resource path="res://tiles/Grifo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main_character/mandrita.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tiles/special_tiles_holder.gd" type="Script" id=6]
-[ext_resource path="res://tiles/Cañería.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tiles/Bandera.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 29, 1, 29, 1, 1, 64, 1 )
@@ -243,16 +243,8 @@ tile_data = PoolIntArray( 262150, 0, 0, 262151, 3, 0 )
 script = ExtResource( 6 )
 
 [node name="Grifo" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
-position = Vector2( 640, 256 )
+position = Vector2( 320, 256 )
 activated_frame = 4
 
-[node name="Grifo2" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
-position = Vector2( 576, 256 )
-activated_frame = 4
-
-[node name="Grifo3" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
-position = Vector2( 704, 256 )
-activated_frame = 4
-
-[node name="Sewer" parent="SpecialTilesHolder" instance=ExtResource( 7 )]
-position = Vector2( 384, 256 )
+[node name="Bandedra" parent="SpecialTilesHolder" instance=ExtResource( 7 )]
+position = Vector2( 448, 256 )

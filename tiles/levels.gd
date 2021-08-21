@@ -4,4 +4,4 @@ extends Node2D
 
 func _process(delta):
 	if Input.is_action_pressed("trigger"):
-		$SpecialTilesHolder/Sewer.activate()
+		$SpecialTilesHolder/Grifo.activate()

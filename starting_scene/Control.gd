@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Start_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://tiles/tiles.tscn")
 
 
 func _on_credits_button_pressed():

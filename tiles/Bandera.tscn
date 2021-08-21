@@ -12,6 +12,7 @@ current_frame = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+centered = false
 vframes = 2
 hframes = 4
 frame = 3
@@ -19,4 +20,5 @@ frame = 3
 [node name="Area2D" type="Area2D" parent="Sprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 32, 32 )
 shape = SubResource( 1 )
