@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Start_button_pressed():
-	get_tree().change_scene("res://tiles/tiles.tscn")
+	get_tree().change_scene("res://levels/Level1.tscn")
 
 
 func _on_credits_button_pressed():

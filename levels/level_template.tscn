@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tiles/special_tiles_holder.gd" type="Script" id=1]
+[ext_resource path="res://main_character/mandrita.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/BackgroundTiles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/levels.gd" type="Script" id=4]
+[ext_resource path="res://tiles/Bandera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/ResetInterface.tscn" type="PackedScene" id=6]
+[ext_resource path="res://test1_noloop.wav" type="AudioStream" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BackgroundTiles" parent="." instance=ExtResource( 3 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 2, 2 )
+
+[node name="SpecialTilesHolder" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Bandedra" parent="SpecialTilesHolder" instance=ExtResource( 5 )]
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+margin_left = 827.451
+margin_top = 569.051
+margin_right = 827.451
+margin_bottom = 569.051
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -14.136
+autoplay = true
+[connection signal="broken" from="SpecialTilesHolder/Bandedra" to="." method="_on_Bandedra_broken"]
