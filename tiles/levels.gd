@@ -21,4 +21,4 @@ func _on_Bandedra_broken(_source_pos, _target_poss):
 	self.id +=1
 	var connection_string = "res://levels/Level%s.tscn" % self.id 
 	get_tree().change_scene(connection_string)
-	
+

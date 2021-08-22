@@ -36,18 +36,18 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "break"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=5]
 
 [sub_resource type="AnimationNodeStateMachine" id=6]
-states/Idle/node = SubResource( 4 )
+states/Idle/node = SubResource( 3 )
 states/Idle/position = Vector2( 245, 96 )
-states/break/node = SubResource( 3 )
+states/break/node = SubResource( 4 )
 states/break/position = Vector2( 447, 96 )
 transitions = [ "Idle", "break", SubResource( 5 ) ]
 start_node = "Idle"
@@ -65,7 +65,6 @@ script = ExtResource( 2 )
 position = Vector2( 0, 1.47019 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/break = SubResource( 1 )

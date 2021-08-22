@@ -4,5 +4,5 @@ extends Resource
 func infect(tile):
 	pass
 	
-func desinfect(tile):
+func disinfect(tile):
 	pass

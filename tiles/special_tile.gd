@@ -2,10 +2,13 @@ class_name SpecialTile
 extends Tile
 
 
-signal infected
+signal infected(tile, is_not_infected)
 
+const ACTIVATION_WAIT_TIME = 1
+
+var activation_timer = Timer.new()
 var click_var = false
-var infected_value = true
+var is_not_infected = true
 var current_effect
 var target_tiles_positions_original_length
 enum {FIREHYDRANT_HEALTHY,SEWER_HEALTHY, SIGNPOST_HEALTHY, FLAG_DOWN, FIREHYDRANT_BROKEN, SEWER_BROKEN, SIGNPOST_BROKEN, FLAG_UP}
@@ -40,9 +43,17 @@ func _input(event):
 		click_var = true
 
 func _ready():
+	self.activation_timer.connect("timeout", self, "_on_activation_timer_timeout")
+	self.add_child(self.activation_timer)
 	$Sprite.frame = current_frame
 	self.target_tiles_positions_original_length = len(target_tiles_positions)
 	self._set_tile_pointers()
+
+
+func _on_activation_timer_timeout():
+	self.activation_timer.stop()
+	emit_signal("broken", self.position / TILE_SIZE, self.target_tiles_positions)
+
 
 func _set_tile_pointers():
 	for pos in self.target_tiles_positions:
@@ -56,13 +67,26 @@ func set_current_frame(frame: int):
 
 func _animate_activation():
 	self.set_current_frame(self.activated_frame)
+	self.activation_timer.start(ACTIVATION_WAIT_TIME)
 
+
+func _animate_infection():
+	var spore = load("res://esporas/spore_1.tscn").instance()
+#	spore.position = self.position
+	spore.get_child(0).emitting = true
+	self.add_child(spore)
+
+func _animate_disinfection():
+	pass
 
 func infect():
+	self.is_not_infected = false
+	self._animate_infection()
 	self.effect.infect(self)
 
 
 func disinfect():
+	self.is_not_infected = true
 	self.effect.disinfect(self)
 
 
@@ -95,11 +119,10 @@ func _on_Area2D_mouse_exited():
 
 
 func _on_Area2D_body_entered(body):
-	if click_var && infected_value:
-#		emit_signal("infected", infected_value, 2)
-		infected_value = false
-		self.infect()
-	elif click_var:
-#		emit_signal("infected", infected_value, 1)
-		infected_value = true
-		self.disinfect()
+	
+	if click_var:
+		if self.is_not_infected:
+			self.infect()
+		else:
+			self.disinfect()
+

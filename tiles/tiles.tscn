@@ -243,4 +243,3 @@ script = ExtResource( 6 )
 
 [node name="Grifo" parent="SpecialTilesHolder" instance=ExtResource( 4 )]
 position = Vector2( 320, 256 )
-[connection signal="infected" from="SpecialTilesHolder/Grifo" to="SpecialTilesHolder" method="_on_Grifo_infected"]

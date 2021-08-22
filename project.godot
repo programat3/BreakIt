@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://tiles/special_tiles_holder.gd"
 }, {
 "base": "Node2D",
+"class": "Spore",
+"language": "GDScript",
+"path": "res://esporas/spore.gd"
+}, {
+"base": "Node2D",
 "class": "Tile",
 "language": "GDScript",
 "path": "res://tiles/tile.gd"
@@ -51,6 +56,7 @@ _global_script_class_icons={
 "Level": "",
 "SpecialTile": "",
 "SpecialTilesHolder": "",
+"Spore": "",
 "Tile": ""
 }
 

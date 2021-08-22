@@ -13,7 +13,7 @@ func activate():
 	if not self.activated:
 		self.activated = true
 		self._animate_activation()
-		emit_signal("broken", self.position / TILE_SIZE, self.target_tiles_positions)
+#		emit_signal("broken", self.position / TILE_SIZE, self.target_tiles_positions)
 
 
 func _animate_activation():
