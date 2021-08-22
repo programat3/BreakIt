@@ -6,10 +6,10 @@ var tiles_dict = {}
 
 
 func _ready():
-	for pos in $Grifo.target_tiles_positions:
-		var tile_pointer = load("res://tiles/TilePointer.tscn").instance()
-		tile_pointer.position = self.position + pos*Tile.TILE_SIZE
-		$Grifo/Pointer.add_child(tile_pointer)
+#	for pos in $Grifo.target_tiles_positions:
+#		var tile_pointer = load("res://tiles/TilePointer.tscn").instance()
+#		tile_pointer.position = self.position + pos*Tile.TILE_SIZE
+#		$Grifo/Pointer.add_child(tile_pointer)
 		
 	for child in self.get_children():
 		self.register_tile(child)

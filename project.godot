@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Effect",
+"class": "AmplifierEffect",
+"language": "GDScript",
+"path": "res://tiles/amplifier_effect.gd"
+}, {
 "base": "Resource",
 "class": "Effect",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://tiles/tile.gd"
 } ]
 _global_script_class_icons={
+"AmplifierEffect": "",
 "Effect": "",
 "FireHydrant": "",
 "Level": "",

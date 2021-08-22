@@ -9,6 +9,7 @@ extents = Vector2( 32, 32 )
 [node name="Bandedra" type="Node2D"]
 script = ExtResource( 2 )
 current_frame = 3
+activated_frame = 7
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

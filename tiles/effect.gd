@@ -1,8 +1,8 @@
 class_name Effect
 extends Resource
 
-func infect():
+func infect(tile):
 	pass
 	
-func desinfect():
+func desinfect(tile):
 	pass
