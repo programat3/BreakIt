@@ -6,6 +6,7 @@ max_value = 400.0
 _data = [ Vector2( 0, -400 ), 0.0, 0.0, 0, 0, Vector2( 0.149425, 400 ), 0.0, 0.0, 0, 0, Vector2( 0.333333, -400 ), 0.0, 0.0, 0, 0, Vector2( 0.488506, 400 ), 11.5041, 11.5041, 0, 0, Vector2( 0.683908, -400 ), 0.0, 0.0, 0, 0, Vector2( 0.867816, 400 ), 0.0, 0.0, 0, 0, Vector2( 1, -400 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 32, 0 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false

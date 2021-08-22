@@ -248,3 +248,4 @@ activated_frame = 4
 
 [node name="Bandedra" parent="SpecialTilesHolder" instance=ExtResource( 7 )]
 position = Vector2( 448, 256 )
+[connection signal="infected" from="SpecialTilesHolder/Grifo" to="SpecialTilesHolder" method="_on_Grifo_infected"]

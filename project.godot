@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://tiles/effect.gd"
+}, {
+"base": "Resource",
 "class": "FireHydrant",
 "language": "GDScript",
 "path": "res://tiles/special tiles/fire_hydrant.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://tiles/tile.gd"
 } ]
 _global_script_class_icons={
+"Effect": "",
 "FireHydrant": "",
 "Level": "",
 "SpecialTile": "",

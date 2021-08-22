@@ -6,7 +6,6 @@
 [sub_resource type="Animation" id=1]
 resource_name = "break"
 length = 1.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mandrita:frame")
 tracks/0/interp = 1
@@ -37,21 +36,21 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=3]
-animation = "break"
-
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "break"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=5]
 
 [sub_resource type="AnimationNodeStateMachine" id=6]
+states/Idle/node = SubResource( 4 )
+states/Idle/position = Vector2( 245, 96 )
 states/break/node = SubResource( 3 )
 states/break/position = Vector2( 447, 96 )
-states/idle/node = SubResource( 4 )
-states/idle/position = Vector2( 245, 96 )
-transitions = [ "idle", "break", SubResource( 5 ) ]
-start_node = "idle"
+transitions = [ "Idle", "break", SubResource( 5 ) ]
+start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=7]
 
@@ -66,7 +65,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, 1.47019 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 2
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/break = SubResource( 1 )

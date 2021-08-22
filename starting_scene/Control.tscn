@@ -93,7 +93,7 @@ custom_fonts/normal_font = SubResource( 4 )
 text = "
 Left click on the desired cell for infection, click
 again for 
-desinfection "
+desinfection. And space to detonate "
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
