@@ -2,7 +2,7 @@ class_name SpecialTile
 extends Tile
 
 
-signal infected(tile, is_not_infected)
+signal infected(is_not_infected)
 
 const ACTIVATION_WAIT_TIME = 1
 
@@ -85,11 +85,13 @@ func infect():
 	self.is_not_infected = false
 	self._animate_infection()
 	self.effect.infect(self)
+	emit_signal("infected", self.is_not_infected)
 
 
 func disinfect():
 	self.is_not_infected = true
 	self.effect.disinfect(self)
+	emit_signal("infected", self.is_not_infected)
 
 
 func get_target_tiles_positions():
@@ -125,8 +127,11 @@ func _on_Area2D_mouse_exited():
 func _on_Area2D_body_entered(body):
 	
 	if click_var:
-		if self.is_not_infected:
+		if self.is_not_infected and body.get_current_spores() > 0:
+			body.set_current_spores(body.get_current_spores() - 1)
 			self.infect()
 		else:
-			self.disinfect()
+			if !self.is_not_infected:
+				body.set_current_spores(body.get_current_spores() + 1)
+				self.disinfect()
 

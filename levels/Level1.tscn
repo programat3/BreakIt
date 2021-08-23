@@ -5,9 +5,10 @@
 
 [node name="Level1" instance=ExtResource( 2 )]
 id = 1
+available_spores = 1
 
-[node name="Node2D" parent="." index="1"]
-position = Vector2( 224.05, 392.8 )
+[node name="Mandrita" parent="." index="1"]
+position = Vector2( 214, 233 )
 
 [node name="Grifo" parent="SpecialTilesHolder" index="0" instance=ExtResource( 1 )]
 position = Vector2( 320, 256 )

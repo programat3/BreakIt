@@ -7,9 +7,10 @@
 
 [node name="Node2D" instance=ExtResource( 1 )]
 id = 3
+available_spores = 4
 
-[node name="Node2D" parent="." index="1"]
-position = Vector2( 155.8, 145.35 )
+[node name="Mandrita" parent="." index="1"]
+position = Vector2( 128, 114 )
 
 [node name="Bandedra" parent="SpecialTilesHolder" index="0"]
 position = Vector2( 640, 384 )

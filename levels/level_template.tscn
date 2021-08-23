@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tiles/special_tiles_holder.gd" type="Script" id=1]
 [ext_resource path="res://main_character/mandrita.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://tiles/Bandera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://levels/ResetInterface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://test1_noloop.wav" type="AudioStream" id=7]
+[ext_resource path="res://levels/SporeCounter.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -14,7 +15,8 @@ script = ExtResource( 4 )
 [node name="BackgroundTiles" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Mandrita" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128, 128 )
 scale = Vector2( 2, 2 )
 
 [node name="SpecialTilesHolder" type="Node2D" parent="."]
@@ -32,4 +34,7 @@ margin_bottom = 569.051
 stream = ExtResource( 7 )
 volume_db = -14.136
 autoplay = true
+
+[node name="SporeCounter" parent="." instance=ExtResource( 8 )]
+margin_left = 960.0
 [connection signal="broken" from="SpecialTilesHolder/Bandedra" to="." method="_on_Bandedra_broken"]
