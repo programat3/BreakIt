@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tiles/background_sprites.png" type="Texture" id=1]
 [ext_resource path="res://tiles/special_tile.gd" type="Script" id=2]
+[ext_resource path="res://tiles/special tiles/sign_post_boost_effect.tres" type="Resource" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [node name="Poste" type="Node2D"]
 script = ExtResource( 2 )
-target_tiles_positions = null
+target_tiles_positions = [ Vector2( 0, 1 ) ]
 current_frame = 2
-activated_frame = null
+activated_frame = 6
+effect = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -26,7 +28,6 @@ position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
 [node name="Pointer" type="Node2D" parent="."]
-visible = false
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

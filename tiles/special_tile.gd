@@ -68,6 +68,8 @@ func set_current_frame(frame: int):
 func _animate_activation():
 	self.set_current_frame(self.activated_frame)
 	self.activation_timer.start(ACTIVATION_WAIT_TIME)
+	for pointer in $Pointer.get_children():
+		pointer.get_node("AnimationPlayer").play("destruction")
 
 
 func _animate_infection():
@@ -111,11 +113,13 @@ func reset_target_tiles_positions():
 		pointers[remove_pos].queue_free()
 
 func _on_Area2D_mouse_entered(): 
-	$Pointer.visible = true
+	for pointer in $Pointer.get_children():
+		pointer.get_node("Reference").visible = true
 
 
 func _on_Area2D_mouse_exited():
-	$Pointer.visible = false
+	for pointer in $Pointer.get_children():
+		pointer.get_node("Reference").visible = false
 
 
 func _on_Area2D_body_entered(body):

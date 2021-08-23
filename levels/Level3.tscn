@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/level_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/Poste.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/Grifo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/Cañería.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" instance=ExtResource( 1 )]
+id = 3
+
+[node name="Node2D" parent="." index="1"]
+position = Vector2( 155.8, 145.35 )
+
+[node name="Bandedra" parent="SpecialTilesHolder" index="0"]
+position = Vector2( 640, 384 )
+
+[node name="Grifo" parent="SpecialTilesHolder" index="1" instance=ExtResource( 3 )]
+position = Vector2( 256, 64 )
+
+[node name="Poste" parent="SpecialTilesHolder" index="2" instance=ExtResource( 2 )]
+position = Vector2( 640, 192 )
+
+[node name="Sewer" parent="SpecialTilesHolder" index="3" instance=ExtResource( 4 )]
+position = Vector2( 640, 64 )
+
+[node name="Grifo2" parent="SpecialTilesHolder" index="4" instance=ExtResource( 3 )]
+position = Vector2( 448, 64 )
